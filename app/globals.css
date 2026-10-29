@@ -1,31 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
+  --font-display: var(--font-display), "Oswald", "Bebas Neue", sans-serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-story: "Story Script", cursive;
+
+  --color-gold-50: #faf6ed;
+  --color-gold-100: #f4ecda;
+  --color-gold-200: #ebd8b1;
+  --color-gold-300: #dfc07a;
+  --color-gold-400: #d4a743;
+  --color-gold-500: #c59b3f;
+  --color-gold-600: #9e7527;
+  --color-champagne: #f5efeb;
+  --color-amber-glow: #e2b86e;
+  --color-luxury-bg: #0c0b0a;
+  --color-luxury-dark: #121110;
+  --color-luxury-card: #181614;
+}
+
 :root {
-  --background: #171717;
-  --foreground: #ffffff;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0c0b0a;
+  --foreground: #f5efeb;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
 }
 
-main {
-  width: 100%;
-  min-height: 100dvh;
+/* Explicit font family utilities for bulletproof fallback */
+.font-serif {
+  font-family: var(--font-serif), "Playfair Display", Georgia, serif;
+}
+
+.font-display {
+  font-family: var(--font-display), "Oswald", "Bebas Neue", sans-serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-story {
+  font-family: "Story Script", cursive;
+}
+
+::selection {
+  background: rgba(223, 192, 122, 0.3);
+  color: #ffffff;
 }
